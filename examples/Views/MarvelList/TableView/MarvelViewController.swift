@@ -8,17 +8,52 @@
 
 import UIKit
 
-class MarvelViewController: UIViewController {
+class MarvelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // MARK: IBOutlet
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: Variables
+    let nibIdentifier: String = "MarvelTableViewCell"
+    let cellIdentifier: String = "cellIdentifier"
+    
+    // Array from data
+    
+    
+    // MARK: System
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.title = "Marvel List"
+        
+        // Make download
+        
+        self.tableView.register(UINib(nibName: nibIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    // MARK: TableView
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MarvelTableViewCell
+        
+        // Build cell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt \(indexPath.row)")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 }

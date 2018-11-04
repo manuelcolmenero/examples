@@ -14,6 +14,8 @@
 		26CDCE95218F61900015111C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CDCE93218F61900015111C /* MainViewController.xib */; };
 		26CDCE98218F6B720015111C /* MarvelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDCE96218F6B720015111C /* MarvelViewController.swift */; };
 		26CDCE99218F6B720015111C /* MarvelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CDCE97218F6B720015111C /* MarvelViewController.xib */; };
+		26CDCE9C218F6C550015111C /* MarvelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDCE9A218F6C550015111C /* MarvelTableViewCell.swift */; };
+		26CDCE9D218F6C550015111C /* MarvelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26CDCE9B218F6C550015111C /* MarvelTableViewCell.xib */; };
 		68EC709CC23FD03F84D0E6FA /* Pods_examples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BDB5045DCA4490FA0D734D /* Pods_examples.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		26CDCE93218F61900015111C /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		26CDCE96218F6B720015111C /* MarvelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelViewController.swift; sourceTree = "<group>"; };
 		26CDCE97218F6B720015111C /* MarvelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarvelViewController.xib; sourceTree = "<group>"; };
+		26CDCE9A218F6C550015111C /* MarvelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTableViewCell.swift; sourceTree = "<group>"; };
+		26CDCE9B218F6C550015111C /* MarvelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarvelTableViewCell.xib; sourceTree = "<group>"; };
 		89BDB5045DCA4490FA0D734D /* Pods_examples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_examples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1F0EC5F11B970935B2690D /* Pods-examples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-examples.debug.xcconfig"; path = "Pods/Target Support Files/Pods-examples/Pods-examples.debug.xcconfig"; sourceTree = "<group>"; };
 		EE808EE97E31CFF709EB4941 /* Pods-examples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-examples.release.xcconfig"; path = "Pods/Target Support Files/Pods-examples/Pods-examples.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 		26CDCE8B218F606C0015111C /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				26CDCE9A218F6C550015111C /* MarvelTableViewCell.swift */,
+				26CDCE9B218F6C550015111C /* MarvelTableViewCell.xib */,
 				26CDCE96218F6B720015111C /* MarvelViewController.swift */,
 				26CDCE97218F6B720015111C /* MarvelViewController.xib */,
 			);
@@ -244,6 +250,7 @@
 			files = (
 				26CDCE7E218F5E900015111C /* LaunchScreen.storyboard in Resources */,
 				26CDCE95218F61900015111C /* MainViewController.xib in Resources */,
+				26CDCE9D218F6C550015111C /* MarvelTableViewCell.xib in Resources */,
 				26CDCE7B218F5E900015111C /* Assets.xcassets in Resources */,
 				26CDCE99218F6B720015111C /* MarvelViewController.xib in Resources */,
 			);
@@ -301,6 +308,7 @@
 			files = (
 				26CDCE98218F6B720015111C /* MarvelViewController.swift in Sources */,
 				26CDCE74218F5E8E0015111C /* AppDelegate.swift in Sources */,
+				26CDCE9C218F6C550015111C /* MarvelTableViewCell.swift in Sources */,
 				26CDCE94218F61900015111C /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
