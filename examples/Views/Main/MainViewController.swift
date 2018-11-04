@@ -10,10 +10,13 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    // MARK: IBOutlets
+    @IBOutlet weak var btnMarvel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "Examples"
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +24,10 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: IBAction
+    @IBAction func clickBtnMarvel(_ sender: Any) {
+        
     }
-    */
+    
 
 }
