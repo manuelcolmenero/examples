@@ -63,8 +63,13 @@ class DownloadCharacterList {
             } else {
                 if data != nil {
                     // Convert jsonData from API in realmData
+                    let characterList: CharacterList = ParseIntoCharacterList(data: data!, onError: { (error) in onError(error) })
                     
-                    onSuccess()
+                    self.saveInRealm(characterList: characterList, onSuccess: {
+                        onSuccess()
+                    }, onError: { (error) in
+                        onError(error)
+                    })
                     
                 } else {
                     onError("Can't download data from server.")
@@ -94,5 +99,11 @@ class DownloadCharacterList {
         request.addValue(GLOBAL_APPURL_REFERER, forHTTPHeaderField: "Referer")
         
         return request
+    }
+    
+    fileprivate func saveInRealm(characterList: CharacterList,
+                                 onSuccess: () -> Void,
+                                 onError: (String) -> Void) {
+        onSuccess()
     }
 }
