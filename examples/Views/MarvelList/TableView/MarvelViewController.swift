@@ -88,7 +88,26 @@ class MarvelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func requestFromRealm() {
-        print("requestFromRealm")
+        let realmOperations = RealmOperations()
+        
+        realmOperations.getAllCharacters(onSuccess: { (characterRealm) in
+            var characterListTemp: Array<Character> = []
+            
+            for character in characterRealm {
+                characterListTemp.append(Character.init(id: character.id,
+                                                        name: character.name,
+                                                        image: character.image))
+            }
+            
+            self.characterListView = CharacterList.init(characterList: characterListTemp)
+            
+            OperationQueue.main.addOperation {
+                self.tableView.reloadData()
+            }
+            
+        }, onError: {(error) in
+            print(error)
+        })
     }
 
 

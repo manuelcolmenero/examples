@@ -37,4 +37,25 @@ public class RealmOperations {
             onError("Can't save character")
         }
     }
+    
+    func getAllCharacters(onSuccess: ([CharacterRealm]) -> Void,
+                          onError: (String) -> Void) {
+        do {
+            var characterList: [CharacterRealm] = []
+            
+            
+            let realm = try Realm()
+            
+            let requestList = realm.objects(CharacterRealm.self).sorted(byKeyPath: "id", ascending: true)
+            
+            for request in requestList {
+                characterList.append(request)
+            }
+            
+            onSuccess(characterList)
+            
+        } catch {
+            onError("Can't get all characters")
+        }
+    }
 }

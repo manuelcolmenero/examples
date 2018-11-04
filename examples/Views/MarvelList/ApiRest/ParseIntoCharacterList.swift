@@ -21,9 +21,9 @@ func ParseIntoCharacterList(data: Data, onError: (String) -> Void) -> CharacterL
             
             for jsonCharacter in jsonResults {
                 
-                let thumbail = jsonCharacter["thumbail"] as! [String: Any]
-                let imagePath = thumbail["path"] as! String
-                let imageExt = thumbail["extension"] as! String
+                let thumbnail = jsonCharacter["thumbnail"] as! [String: Any]
+                let imagePath = thumbnail["path"] as! String
+                let imageExt = thumbnail["extension"] as! String
                 
                 let character: Character = Character.init(id: jsonCharacter["id"] as! Int,
                                                           name: jsonCharacter["name"] as! String,
