@@ -27,6 +27,7 @@ class MarvelViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.title = "Marvel List"
         
         // Make download
+        self.downloadData()
         
         self.tableView.register(UINib(nibName: nibIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView.delegate = self
@@ -72,6 +73,22 @@ class MarvelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("didSelectRowAt \(indexPath.row)")
+    }
+    
+    // MARK:- Aux Func
+    
+    func downloadData() {
+        let download = DownloadCharacterList()
+        download.execute(onSuccess: {
+            self.requestFromRealm()
+            
+        }, onError: { (error) in
+            print(error)
+        })
+    }
+    
+    func requestFromRealm() {
+        print("requestFromRealm")
     }
 
 
