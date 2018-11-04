@@ -104,6 +104,11 @@ class DownloadCharacterList {
     fileprivate func saveInRealm(characterList: CharacterList,
                                  onSuccess: () -> Void,
                                  onError: (String) -> Void) {
-        onSuccess()
+        let realmOperations = RealmOperations()
+        realmOperations.saveCharacterList(characterList, onSuccess: {
+            onSuccess()
+        }, onError: { (error) in
+            onError(error)
+        })
     }
 }
