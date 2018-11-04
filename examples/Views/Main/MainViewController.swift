@@ -26,8 +26,7 @@ class MainViewController: UIViewController {
     
     // MARK: IBAction
     @IBAction func clickBtnMarvel(_ sender: Any) {
-        
+        let viewController: UIViewController = MarvelViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
-
 }
