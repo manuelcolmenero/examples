@@ -18,7 +18,7 @@ class MarvelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let cellIdentifier: String = "cellIdentifier"
     
     // Array from data
-    
+    var characterListView : CharacterList?
     
     // MARK: System
     override func viewDidLoad() {
@@ -36,6 +36,9 @@ class MarvelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let characters = characterListView {
+            return characters.count()
+        }
         return 0
     }
     
@@ -47,6 +50,22 @@ class MarvelViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MarvelTableViewCell
         
         // Build cell
+        if let characters = characterListView {
+            
+            let character = characters.getCharacter(index: indexPath.row)
+            
+            cell.titleCell.text = character.getName()
+            
+            if let url = URL(string: character.getImage()){
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url) {
+                        OperationQueue.main.addOperation {
+                            cell.imageCell.image = UIImage(data: data)
+                        }
+                    }
+                }
+            }
+        }
         
         return cell
     }
